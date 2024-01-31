@@ -1,3 +1,3 @@
 # flask-app
 
-A minimal Hello World Flask application
+A minimal Hello World Flask application.
