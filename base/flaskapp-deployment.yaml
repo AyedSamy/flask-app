@@ -1,0 +1,27 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: flaskapp
+  name: flaskapp
+  namespace: flaskapp
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: flaskapp
+  strategy: {}
+  template:
+    metadata:
+      labels:
+        app: flaskapp
+    spec:
+      containers:
+      - image: quay.io/ayedsamy/python-docker:latest
+        name: python-docker
+        env:
+        - name: NAME
+          value: "John"
+        resources: {}
+---

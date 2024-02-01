@@ -1,0 +1,20 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: flaskapp
+  namespace: test-project
+spec:
+  destination:
+    namespace: bgd
+    server: https://kubernetes.default.svc 
+  project: default 
+  source: 
+    path: overlays/flaskapp
+    repoURL: https://github.com/AyedSamy/flask-app
+    targetRevision: main
+  syncPolicy: 
+    automated:
+      prune: true
+      selfHeal: false
+    syncOptions:
+    - CreateNamespace=true

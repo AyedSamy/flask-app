@@ -1,0 +1,14 @@
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  labels:
+    app: flaskapp
+  name: flaskapp
+  namespace: flaskapp
+spec:
+  port:
+    targetPort: 8080
+  to:
+    kind: Service
+    name: flaskapp
+    weight: 100
