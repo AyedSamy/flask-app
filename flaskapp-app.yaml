@@ -5,7 +5,7 @@ metadata:
   namespace: test-project
 spec:
   destination:
-    namespace: bgd
+    namespace: flaskapp
     server: https://kubernetes.default.svc 
   project: default 
   source: 
