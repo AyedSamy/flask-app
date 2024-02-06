@@ -3,19 +3,19 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   labels:
-    app: flaskapp
-  name: flaskapp
-  namespace: flaskapp
+    app: test-project
+  name: test-project
+  namespace: test-project
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: flaskapp
+      app: test-project
   strategy: {}
   template:
     metadata:
       labels:
-        app: flaskapp
+        app: test-project
     spec:
       containers:
       - image: quay.io/ayedsamy/python-docker:latest
